@@ -25,10 +25,17 @@
         <span class="text-weight-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
         <span class="text-weight-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
         <span class="text-weight-bolder">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+
+        <q-separator spaced inset />
+
+        <q-btn color="primary" label="Open lateral menu" @click="uiStore.toggleSideMenu()"/>
     </q-page>
 </template>
 
 <script setup lang="ts">
+import { useUiStore } from 'src/stores/ui';
+
+const uiStore = useUiStore();
 
 </script>
 

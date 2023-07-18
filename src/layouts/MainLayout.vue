@@ -8,7 +8,7 @@
           round
           icon="las la-bars"
           aria-label="Menu"
-          @click="toggleLeftDrawer"
+          @click="uiStore.toggleSideMenu"
         />
 
         <q-toolbar-title>
@@ -20,7 +20,7 @@
     </q-header>
 
     <q-drawer
-      v-model="leftDrawerOpen"
+      v-model="uiStore.isSideMenuOpen"
       show-if-above
       bordered
     >
@@ -47,8 +47,10 @@
 
 <script setup lang="ts">
 import type { EssentialLinkProps } from 'components/EssentialLink.vue';
-import { ref } from 'vue';
 import EssentialLink from 'components/EssentialLink.vue';
+import { useUiStore } from 'src/stores/ui';
+
+const uiStore = useUiStore();
 
 const essentialLinks: EssentialLinkProps[] = [
   {
@@ -71,10 +73,4 @@ const essentialLinks: EssentialLinkProps[] = [
     target: '_blank'
   }
 ];
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
 </script>
