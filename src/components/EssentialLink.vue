@@ -2,8 +2,9 @@
   <q-item
     clickable
     tag="a"
-    target="_blank"
-    :href="link"
+    :to="to"
+    :href="href"
+    :target="target"
   >
     <q-item-section
       v-if="icon"
@@ -20,15 +21,27 @@
 </template>
 
 <script setup lang="ts">
-export interface EssentialLinkProps {
+interface EssentialLinkBase {
   title: string;
   caption?: string;
-  link?: string;
   icon?: string;
+  target?: string;
 }
+
+interface EssentialLinkTo extends EssentialLinkBase {
+  href?: undefined;
+  to: string;
+}
+
+interface EssentialLinkHref extends EssentialLinkBase {
+  href: string;
+  to?: undefined;
+}
+
+export type EssentialLinkProps = EssentialLinkTo | EssentialLinkHref
+
 withDefaults(defineProps<EssentialLinkProps>(), {
   caption: '',
-  link: '#',
   icon: '',
 });
 </script>

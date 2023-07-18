@@ -46,51 +46,29 @@
 </template>
 
 <script setup lang="ts">
+import type { EssentialLinkProps } from 'components/EssentialLink.vue';
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
+import EssentialLink from 'components/EssentialLink.vue';
 
 const essentialLinks: EssentialLinkProps[] = [
+  {
+    title: 'Typography',
+    caption: 'Quasar letter types',
+    icon: 'lab la-font-awesome',
+    to: 'typography'
+  },
+  {
+    title: 'Flex Layout',
+    caption: 'Styles using flex',
+    icon: 'las la-pager',
+    to: 'flex'
+  },
   {
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'las la-book',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'lab la-github',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'lab la-discord',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'las la-users',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'lab la-twitter',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'lab la-facebook-f',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'las la-heart',
-    link: 'https://awesome.quasar.dev'
+    href: 'https://quasar.dev',
+    target: '_blank'
   }
 ];
 
