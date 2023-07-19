@@ -66,6 +66,12 @@ const essentialLinks: EssentialLinkProps[] = [
     to: 'flex'
   },
   {
+    title: 'Dialogs',
+    caption: 'Alert, Confirm and Prompts',
+    icon: 'las la-bell',
+    to: 'dialogs'
+  },
+  {
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'las la-book',
