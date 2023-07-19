@@ -1,15 +1,6 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    :to="to"
-    :href="href"
-    :target="target"
-  >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
+  <q-item clickable tag="a" :to="to" :href="href" :target="target">
+    <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
 
@@ -38,10 +29,12 @@ interface EssentialLinkHref extends EssentialLinkBase {
   to?: undefined;
 }
 
-export type EssentialLinkProps = EssentialLinkTo | EssentialLinkHref
+export type EssentialLinkProps = EssentialLinkTo | EssentialLinkHref;
 
 withDefaults(defineProps<EssentialLinkProps>(), {
   caption: '',
   icon: '',
+  href: undefined,
+  to: undefined,
 });
 </script>

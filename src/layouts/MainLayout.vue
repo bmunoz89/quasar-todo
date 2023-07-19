@@ -11,25 +11,15 @@
           @click="uiStore.toggleSideMenu"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-toolbar-title> Quasar App </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="uiStore.isSideMenuOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer v-model="uiStore.isSideMenuOpen" show-if-above bordered>
       <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
+        <q-item-label header> Essential Links </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -52,31 +42,32 @@ import { useUiStore } from 'src/stores/ui';
 
 const uiStore = useUiStore();
 
+// https://icons8.com/line-awesome
 const essentialLinks: EssentialLinkProps[] = [
   {
     title: 'Typography',
     caption: 'Quasar letter types',
     icon: 'lab la-font-awesome',
-    to: 'typography'
+    to: 'typography',
   },
   {
     title: 'Flex Layout',
     caption: 'Styles using flex',
     icon: 'las la-pager',
-    to: 'flex'
+    to: 'flex',
   },
   {
     title: 'Dialogs',
     caption: 'Alert, Confirm and Prompts',
     icon: 'las la-bell',
-    to: 'dialogs'
+    to: 'dialogs',
   },
   {
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'las la-book',
     href: 'https://quasar.dev',
-    target: '_blank'
-  }
+    target: '_blank',
+  },
 ];
 </script>
