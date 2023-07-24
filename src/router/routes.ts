@@ -12,6 +12,7 @@ const routes: RouteRecordRaw[] = [
       },
       { path: 'flex', component: () => import('pages/FlexPage.vue') },
       { path: 'dialogs', component: () => import('pages/DialogsPage.vue') },
+      { path: 'forms', component: () => import('pages/FormsPage.vue') },
     ],
   },
   // Always leave this as last one,

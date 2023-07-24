@@ -63,6 +63,12 @@ const essentialLinks: EssentialLinkProps[] = [
     to: 'dialogs',
   },
   {
+    title: 'Forms',
+    caption: 'Testing form components',
+    icon: 'lab la-wpforms',
+    to: 'forms',
+  },
+  {
     title: 'Docs',
     caption: 'quasar.dev',
     icon: 'las la-book',
