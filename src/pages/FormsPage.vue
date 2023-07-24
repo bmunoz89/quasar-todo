@@ -71,6 +71,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+import { useQuasar } from 'quasar';
+
+const $q = useQuasar();
+
 interface UserForm {
   email: string;
   password: string;
@@ -92,6 +96,12 @@ const errorInAccept = ref(false);
 function onSubmit() {
   if (userForm.value.accept !== true) {
     errorInAccept.value = true;
+    $q.notify({
+      type: 'negative',
+      message: 'You must accept the license and terms before submit.',
+      icon: 'las la-exclamation-triangle',
+      badgeColor: 'orange',
+    });
   }
 }
 
